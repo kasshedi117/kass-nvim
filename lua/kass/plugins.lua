@@ -3,3 +3,11 @@ if (not status) then
   print("Packer is not installed")
   return
 end
+
+-- Only required if you have packer configured as `opt`
+vim.cmd [[packadd packer.nvim]]
+
+packer.startup(function(use)
+  use 'wbthomason/packer.nvim'
+  use 'ellisonleao/gruvbox.nvim'
+end)
