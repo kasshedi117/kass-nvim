@@ -80,6 +80,15 @@ local opts = {
 }
 
 local mappings = {
+  ["t"] = {
+    name = "Telescope",
+    {
+      f = { "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", "<leader>f : Find a file" },
+      g = { "<cmd>Telescope live_grep<cr>", "<leader>g : Search in all files" },
+      b = { "<cmd>Telescope buffers<cr>", "<leader>b : Search in buffers" },
+      h = { "<cmd>Telescope help_tags<cr>", "Help" },
+    }
+  },
   ["e"] = {
     name = "Custom",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
