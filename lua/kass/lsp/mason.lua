@@ -1,4 +1,8 @@
 local servers = {
+  "angularls",
+  "tsserver",
+  "html",
+  "cssls",
 	"sumneko_lua",
 	"pyright",
 	"jsonls",
