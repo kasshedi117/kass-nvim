@@ -63,6 +63,7 @@ nvim_tree.setup {
         { key = "go", action = "edit" },
         { key = "o", action = "preview" },
         { key = "t", action = "tabnew" },
+        { key = "T", action = "tabnew" },
         { key = "v", action = "vsplit" },
         { key = "V", action = "split" },
       },
