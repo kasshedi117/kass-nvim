@@ -93,6 +93,9 @@ return packer.startup(function(use)
   -- use "akinsho/bufferline.nvim"
   use "moll/vim-bbye"
 
+  -- which-key
+  use "folke/which-key.nvim"
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
