@@ -73,7 +73,7 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
-  use 'nvim-telescope/telescope-media-files.nvim'
+  use "nvim-telescope/telescope-media-files.nvim"
 
   -- Treesitter
   use {
@@ -84,7 +84,14 @@ return packer.startup(function(use)
   use "nvim-treesitter/playground"
 
   -- Nvim-tree
-  use "kyazdani42/nvim-tree.lua" 
+  use "kyazdani42/nvim-tree.lua"
+  use "kyazdani42/nvim-web-devicons"
+
+
+  -- BufferLine // TO_DO update to last version
+  use { "akinsho/bufferline.nvim", commit = "06eb4ad9486bd13440ffea243ea83d314f4a8e7e" } -- Specific commit
+  -- use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
