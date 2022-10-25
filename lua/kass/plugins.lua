@@ -49,6 +49,8 @@ return packer.startup(function(use)
 
   -- Colorschemes
   use "ellisonleao/gruvbox.nvim"
+  use "folke/tokyonight.nvim"
+  use "lunarvim/darkplus.nvim"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
