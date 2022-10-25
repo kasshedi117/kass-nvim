@@ -89,6 +89,13 @@ local mappings = {
       h = { "<cmd>Telescope help_tags<cr>", "Help" },
     }
   },
+  ["c"] = {
+    name = "Comments",
+    {
+      c = { "gc", "Toggles the region using linewise comment" },
+      b = { "gb", "Toggles the region using blockwise comment" },
+    }
+  },
   ["e"] = {
     name = "Custom",
     c = { "<cmd>PackerCompile<cr>", "Compile" },
