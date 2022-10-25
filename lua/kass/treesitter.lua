@@ -1,6 +1,6 @@
 local status_ok, configs = pcall(require, "nvim-treesitter.configs")
 if not status_ok then
-    print('Nvim-Treesitter ls is not installed!')
+    require("notify")("Nvim-Treesitter ls is not installed!")
   return
 end
 

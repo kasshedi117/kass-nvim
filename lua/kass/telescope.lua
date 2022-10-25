@@ -1,6 +1,6 @@
 local status_ok, telescope = pcall(require, "telescope")
 if not status_ok then
-    print('Telescope ls is not installed!')
+    require("notify")("Telescope ls is not installed!")
   return
 end
 

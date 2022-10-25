@@ -1,6 +1,6 @@
 local status_ok, bufferline = pcall(require, "bufferline")
 if not status_ok then
-    print('Bufferline is not installed!')
+    require("notify")("Bufferline is not installed!")
   return
 end
 
