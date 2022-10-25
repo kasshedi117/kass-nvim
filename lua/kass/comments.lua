@@ -1,6 +1,6 @@
 local status_ok, comment = pcall(require, "Comment")
 if not status_ok then
-    print('Comment is not installed!')
+    require("notify")("Comment is not installed!")
   return
 end
 

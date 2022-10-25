@@ -1,12 +1,12 @@
 local cmp_status_ok, cmp = pcall(require, "cmp")
 if not cmp_status_ok then
-        print('Cmp ls is not installed!')
+    require("notify")("cmp is not installed!")
   return
 end
 
 local snip_status_ok, luasnip = pcall(require, "luasnip")
 if not snip_status_ok then
-        print('LunSnip ls is not installed!')
+    require("notify")("Lunsnip is not installed!")
   return
 end
 

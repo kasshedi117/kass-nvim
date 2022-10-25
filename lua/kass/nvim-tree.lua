@@ -1,12 +1,12 @@
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
-    print('Nvim-tree is not installed!')
+    require("notify")("Nvim-tree is not installed!")
   return
 end
 
 local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
 if not config_status_ok then
-    print('Nvim-tree.config is not installed!')
+    require("notify")("Nvim-tree.config is not installed!")
   return
 end
 
