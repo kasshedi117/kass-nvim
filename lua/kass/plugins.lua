@@ -106,10 +106,13 @@ return packer.startup(function(use)
   use "lewis6991/gitsigns.nvim"
 
   -- lualine 
-  use { "nvim-lualine/lualine.nvim" }
+  use "nvim-lualine/lualine.nvim"
 
   -- nvim-notify
-  use { "rcarriga/nvim-notify" }
+  use "rcarriga/nvim-notify"
+
+  -- toggleTerm 
+  use "akinsho/toggleterm.nvim" -- Terminal 
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
