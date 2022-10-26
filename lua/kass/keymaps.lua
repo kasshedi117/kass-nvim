@@ -41,9 +41,3 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
-
--- Terminal
--- keymap("n", "<leader>t", "<cmd>lua _LAZYGIT_TOGGLE()<CR>", opts)
-
-
-
