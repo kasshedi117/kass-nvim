@@ -117,6 +117,9 @@ return packer.startup(function(use)
   -- projects
   use 'ahmedkhalf/project.nvim'
 
+  -- indent line
+  use "lukas-reineke/indent-blankline.nvim"
+
   -- impatient 
   use 'lewis6991/impatient.nvim' -- Load nvim faster, install and forgot
 
