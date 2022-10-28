@@ -34,6 +34,7 @@ keymap("v", "p", '"_dP', opts)
 keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
 keymap("n", "<leader>g", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>b", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>p", "<cmd>Telescope projects<CR>", opts)
 
 -- bufferLine
 keymap("n", "<leader>q", ":Bdelete!<cr>", opts)
