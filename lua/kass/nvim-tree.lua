@@ -55,6 +55,10 @@ nvim_tree.setup {
       error = "",
     },
   },
+  live_filter = {
+    prefix = "[FILTER]: ",
+    always_show_folders = false, -- live_filter do not display empty folders 
+  },
   view = {
     width = 40,
     side = "left",
