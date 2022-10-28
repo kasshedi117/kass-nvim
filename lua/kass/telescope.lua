@@ -6,6 +6,7 @@ end
 
 telescope.load_extension('media_files')
 telescope.load_extension('projects')
+telescope.load_extension('fzf')
 
 local actions = require "telescope.actions"
 
@@ -91,6 +92,13 @@ telescope.setup {
     -- builtin picker
   -- },
   extensions = {
+    fzf = {
+      fuzzy = true, -- false will only do exact matching
+      override_generic_sorter = true, -- override the generic sorter
+      override_file_sorter = true, -- override the file sorter
+      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+    },
+    ag = {},
     media_files = {
         -- filetypes whitelist
         -- defaults to {"png", "jpg", "mp4", "webm", "pdf"}
