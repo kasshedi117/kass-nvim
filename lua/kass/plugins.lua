@@ -123,6 +123,9 @@ return packer.startup(function(use)
   -- impatient 
   use 'lewis6991/impatient.nvim' -- Load nvim faster, install and forgot
 
+  use 'goolord/alpha-nvim'
+
+
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then
