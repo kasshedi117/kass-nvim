@@ -46,3 +46,15 @@ keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- harpoon
+keymap("n", "<leader>a", ":lua require('harpoon.mark').add_file()<CR>", opts )
+keymap("n", "<leader>z", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts )
+keymap("n", "<leader>&", ":lua require('harpoon.ui').nav_file(1)<CR>", opts )
+keymap("n", "<leader>é", ":lua require('harpoon.ui').nav_file(2)<CR>", opts )
+keymap("n", "<leader>\"", ":lua require('harpoon.ui').nav_file(3)<CR>", opts )
+keymap("n", "<leader>'", ":lua require('harpoon.ui').nav_file(4)<CR>", opts )
+keymap("n", "<leader>(", ":lua require('harpoon.ui').nav_file(5)<CR>", opts )
+keymap("n", "<leader>-", ":lua require('harpoon.ui').nav_file(6)<CR>", opts )
+keymap("n", "<leader>è", ":lua require('harpoon.ui').nav_file(7)<CR>", opts )
+keymap("n", "<leader>_", ":lua require('harpoon.ui').nav_file(8)<CR>", opts )
