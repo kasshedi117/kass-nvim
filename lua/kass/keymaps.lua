@@ -58,3 +58,8 @@ keymap("n", "<leader>(", ":lua require('harpoon.ui').nav_file(5)<CR>", opts )
 keymap("n", "<leader>-", ":lua require('harpoon.ui').nav_file(6)<CR>", opts )
 keymap("n", "<leader>è", ":lua require('harpoon.ui').nav_file(7)<CR>", opts )
 keymap("n", "<leader>_", ":lua require('harpoon.ui').nav_file(8)<CR>", opts )
+
+
+keymap("n", "<leader>t", ":Tagbar<CR>", opts )
+
+

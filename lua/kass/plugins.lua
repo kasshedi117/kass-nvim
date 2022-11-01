@@ -78,6 +78,7 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope-media-files.nvim"
   use {"nvim-telescope/telescope-fzf-native.nvim", run = 'make'}
   use "kelly-lin/telescope-ag"
+  use 'ahmedkhalf/project.nvim' -- Find Projects
 
   -- Treesitter
   use {
@@ -95,43 +96,42 @@ return packer.startup(function(use)
   -- BufferLine // TO_DO update to last version
   use { "akinsho/bufferline.nvim", commit = "06eb4ad9486bd13440ffea243ea83d314f4a8e7e" } -- Specific commit
   -- use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
+  use "moll/vim-bbye" -- Delete buffers and other
 
   -- which-key
-  use "folke/which-key.nvim"
+  use "folke/which-key.nvim" -- Menu helps you to find your shortcuts + execute specific commands
 
   -- comments
   use "numToStr/Comment.nvim" -- Easily comment stuff
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
+  use "lewis6991/gitsigns.nvim" -- Git signs
 
   -- lualine 
-  use "nvim-lualine/lualine.nvim"
+  use "nvim-lualine/lualine.nvim" -- Bottom bar
 
   -- nvim-notify
-  use "rcarriga/nvim-notify"
+  use "rcarriga/nvim-notify" -- Notification popup
 
   -- toggleTerm 
   use "akinsho/toggleterm.nvim" -- Terminal 
 
-  -- projects
-  use 'ahmedkhalf/project.nvim'
-
   -- indent line
-  use "lukas-reineke/indent-blankline.nvim"
+  use "lukas-reineke/indent-blankline.nvim" -- Indentation guides to all lines
 
   -- impatient 
   use 'lewis6991/impatient.nvim' -- Load nvim faster, install and forgot
 
-  use 'goolord/alpha-nvim'
+  use 'goolord/alpha-nvim' -- Main menu 
 
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlights
 
-  use 'RRethy/vim-illuminate'
+  use 'RRethy/vim-illuminate' -- Automatically highlighting other uses of the word under the cursor 
 
-  use 'ThePrimeagen/harpoon' -- toggle files and switch between them
+  use 'ThePrimeagen/harpoon' -- Toggle files and switch between them
+
+  use 'preservim/tagbar'
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
@@ -139,3 +139,4 @@ return packer.startup(function(use)
 		require("packer").sync()
 	end
 end)
+
