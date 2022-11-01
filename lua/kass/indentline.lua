@@ -1,5 +1,6 @@
 local status_ok, indent_blankline = pcall(require, "indent_blankline")
 if not status_ok then
+  require("notify")("indent_blankline is not installed!")
 	return
 end
 
