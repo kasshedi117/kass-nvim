@@ -24,22 +24,28 @@ local cmp_select = { behavior = cmp.SelectBehavior.Select }
 local cmp_mappings = lsp.defaults.cmp_mappings({
   ['<C-k>'] = cmp.mapping.select_prev_item(cmp_select),
   ['<C-j>'] = cmp.mapping.select_next_item(cmp_select),
-  ['<tab>'] = cmp.mapping.confirm({ select = true }),
   ["<C-Space>"] = cmp.mapping.complete(),
 })
 
-cmp_mappings['<S-Tab>'] = nil
-cmp_mappings['<CR>'] = nil
-
 lsp.setup_nvim_cmp({
   mapping = cmp_mappings,
+   view = {
+      entries = "wildmenu" -- can be "custom", "wildmenu" or "native"
+   },
+  completion= {
+    autocomplete = false
+  },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     -- { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
-  })
+  }),
+  experimental = {
+    ghost_text = true,
+    native_menu = false,
+  }
 })
 
 lsp.set_preferences({
@@ -86,3 +92,24 @@ vim.diagnostic.config({
 })
 
 require("lspsaga").setup({})
+local null_ls = require("null-ls")
+local null_opts = lsp.build_options("null-ls", {})
+
+null_ls.setup({
+  sources = {
+        null_ls.builtins.formatting.stylua,
+        null_ls.builtins.diagnostics.eslint,
+        null_ls.builtins.completion.spell,
+  },
+	on_attach = function(client, bufnr)
+		null_opts.on_attach(client, bufnr)
+	end,
+})
+
+
+require('cmp-npm').setup({})
+cmp.setup({
+  sources = {
+    { name = 'npm', keyword_length = 4 },
+  }
+})

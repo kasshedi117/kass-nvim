@@ -151,3 +151,24 @@ vim.keymap.set('n', '<leader>fgi', builtin.git_status, {})
 
 
 -- vs sp :close
+
+
+
+local M = {}
+
+function M.grep_notes()
+  local opts = {}
+  opts.search_dir = {'~/notes/','~/.config/nvim'}
+  opts.prompt_title = 'Search Notes'
+  opts.shorten_path = true
+  builtin.live_grep(opts)
+end
+
+return M
+
+
+
+
+
+
+
