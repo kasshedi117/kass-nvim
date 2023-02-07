@@ -1,7 +1,3 @@
-local opts = { noremap = true, silent = true }
-
-local term_opts = { silent = true }
-
 -- Sorten function name
 local keymap = vim.keymap.set
 
@@ -31,7 +27,6 @@ keymap("v", ">", ">gv")
 keymap("v", "p", '"_dP')
 
 keymap("n", "<leader>e", ":NeoTreeFocusToggle<cr>")
-keymap("n", "<leader>b", ":Neotree buffers<cr>")
 
 -- keymap("n", "<S-l>", ":bnext<CR>")
 -- keymap("n", "<S-h>", ":bprevious<CR>")
@@ -73,7 +68,7 @@ keymap("n", "<leader>q", ":bdelete<CR><CR>")
 -- If there is no definition, it will instead be hidden
 -- When you use an action in finder like "open vsplit",
 -- you can use <C-t> to jump back
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>")
+keymap("n", "gr", "<cmd>Lspsaga lsp_finder<CR>")
 
 -- Code action
 keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
@@ -138,21 +133,21 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 keymap("n", "K", "<cmd>Lspsaga hover_doc ++keep<CR>")
 
 -- Call hierarchy
-keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
-keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
+keymap("n", "<leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
+keymap("n", "<leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Floating terminal
 keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
 
-
-
+-- UndoTree
+keymap('n', '<leader>t', '<cmd>UndotreeToggle<CR>')
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+vim.keymap.set('n', '<leader>fgi', builtin.git_status, {})
 
 
-
-
+-- vs sp :close

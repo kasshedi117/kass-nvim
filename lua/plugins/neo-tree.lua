@@ -14,14 +14,11 @@ neo_tree.setup({
     width = 50,
     mappings = {
       ["<space>"] = false,
-    o = "open",
-    T = "open_tabnew",
-    p = { "toggle_preview", config = { use_float = false } },
-    H = "prev_source",
-    L = "next_source",
-      o = "open",
-      H = "prev_source",
-      L = "next_source",
+        o = "open",
+        T = "open_tabnew",
+        p = { "toggle_preview", config = { use_float = false } },
+        H = "prev_source",
+        L = "next_source",
 
       ['<tab>'] = function (state)
           local node = state.tree:get_node()
@@ -29,7 +26,7 @@ neo_tree.setup({
             state.commands["toggle_node"](state)
           else
             state.commands['open'](state)
-            vim.cmd('Neotree reveal')                  
+            vim.cmd('Neotree reveal')
           end
         end,
 
@@ -46,5 +43,4 @@ neo_tree.setup({
       },
     },
   },
-
 })
