@@ -1,6 +1,9 @@
 -- Learn the keybindings, see :help lsp-zero-keybindings
 -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
 local lsp = require('lsp-zero')
+
+require('cmp-npm').setup({})
+
 lsp.preset('recommended')
 
 lsp.ensure_installed({ 'angularls', 'cssls', 'cssmodules_ls', 'eslint', 'graphql', 'html', 'jsonls', 'tailwindcss',
@@ -37,6 +40,7 @@ lsp.setup_nvim_cmp({
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
+    { name = 'npm', keyword_length = 4 }
     -- { name = 'vsnip' }, -- For vsnip users.
     -- { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
@@ -107,9 +111,3 @@ null_ls.setup({
 })
 
 
-require('cmp-npm').setup({})
-cmp.setup({
-  sources = {
-    { name = 'npm', keyword_length = 4 },
-  }
-})
