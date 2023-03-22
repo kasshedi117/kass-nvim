@@ -1,9 +1,7 @@
 local status_ok, comment = pcall(require, "Comment")
 if not status_ok then
-    require("notify")("Comment is not installed!")
   return
 end
-
 
 comment.setup {
     ---Add a space b/w comment and the line
@@ -11,7 +9,7 @@ comment.setup {
     ---Whether the cursor should stay at its position
     sticky = true,
     ---Lines to be ignored while (un)comment
-    ignore = nil,
+   ignore = '^$',
     ---LHS of toggle mappings in NORMAL mode
     toggler = {
         ---Line-comment toggle keymap
