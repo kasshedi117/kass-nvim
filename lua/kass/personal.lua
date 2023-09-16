@@ -1,11 +1,6 @@
 -- Sorten function name
 local keymap = vim.keymap.set
-
--- Rename Space as leader key
-keymap("", "<Space>", "<Nop>")
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 keymap("i", "jj", "<Esc>")
 keymap("i", "bb", "/*")
 keymap("i", "nn", "*/")
@@ -26,28 +21,10 @@ keymap("v", "<", "<gv")
 keymap("v", ">", ">gv")
 keymap("v", "p", '"_dP')
 
-keymap("n", "<leader>e", ":NeoTreeFocusToggle<cr>")
+keymap("n", "<leader>e", ":Neotree toggle<cr>")
 
 -- keymap("n", "<S-l>", ":bnext<CR>")
 -- keymap("n", "<S-h>", ":bprevious<CR>")
-
-keymap("v", "J", ":m '>+1<CR>gv=gv")
-keymap("v", "K", ":m '<-2<CR>gv=gv")
-
-keymap("n", "J", "mzJ`z")
-keymap("n", "<C-d>", "<C-d>zz")
-keymap("n", "<C-u>", "<C-u>zz")
-keymap("n", "n", "nzzzv")
-keymap("n", "N", "Nzzzv")
-
-keymap("x", "<leader>p", [["_dP]])
-
-keymap("n", "<leader>y", [["+y]])
-keymap("v", "<leader>y", [["+y]])
-keymap("n", "<leader>Y", [["+Y]])
-
-keymap("n", "<leader>d", [["_d]])
-keymap("v", "<leader>d", [["_d]])
 
 keymap("n", "<leader>q", ":bdelete<CR><CR>")
 
@@ -71,7 +48,7 @@ keymap("n", "<leader>q", ":bdelete<CR><CR>")
 keymap("n", "gr", "<cmd>Lspsaga lsp_finder<CR>")
 
 -- Code action
-keymap({"n","v"}, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
+keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>")
 
 -- Rename all occurrences of the hovered word for the entire file
 keymap("n", "gr", "<cmd>Lspsaga rename<CR>")
@@ -87,7 +64,7 @@ keymap("n", "gr", "<cmd>Lspsaga rename ++project<CR>")
 -- keymap("n", "gd", "<cmd>Lspsaga peek_definition<CR>")
 
 -- Go to definition
-keymap("n","gd", "<cmd>Lspsaga goto_definition<CR>")
+keymap("n", "gd", "<cmd>Lspsaga goto_definition<CR>")
 
 -- Show line diagnostics
 -- You can pass argument ++unfocus to
@@ -108,14 +85,14 @@ keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_next<CR>")
 
 -- Diagnostic jump with filters such as only jumping to an error
 keymap("n", "[E", function()
-  require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
+	require("lspsaga.diagnostic"):goto_prev({ severity = vim.diagnostic.severity.ERROR })
 end)
 keymap("n", "]E", function()
-  require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
+	require("lspsaga.diagnostic"):goto_next({ severity = vim.diagnostic.severity.ERROR })
 end)
 
 -- Toggle outline
-keymap("n","<leader>o", "<cmd>Lspsaga outline<CR>")
+keymap("n", "<leader>o", "<cmd>Lspsaga outline<CR>")
 
 -- Hover Doc
 -- If there is no hover doc,
@@ -137,38 +114,18 @@ keymap("n", "<leader>ci", "<cmd>Lspsaga incoming_calls<CR>")
 keymap("n", "<leader>co", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Floating terminal
-keymap({"n", "t"}, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
-
--- UndoTree
-keymap('n', '<leader>t', '<cmd>UndotreeToggle<CR>')
-
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
-vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-vim.keymap.set('n', '<leader>fgi', builtin.git_status, {})
-
+keymap({ "n", "t" }, "<A-d>", "<cmd>Lspsaga term_toggle<CR>")
 
 -- vs sp :close
-
-
 
 local M = {}
 
 function M.grep_notes()
-  local opts = {}
-  opts.search_dir = {'~/notes/','~/.config/nvim'}
-  opts.prompt_title = 'Search Notes'
-  opts.shorten_path = true
-  builtin.live_grep(opts)
+	local opts = {}
+	opts.search_dir = { "~/notes/", "~/.config/nvim" }
+	opts.prompt_title = "Search Notes"
+	opts.shorten_path = true
+	builtin.live_grep(opts)
 end
 
 return M
-
-
-
-
-
-
-
