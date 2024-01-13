@@ -1,2 +1,2 @@
-require("core")
-require("plugins")
+require("kass.core")
+require("kass.lazy")

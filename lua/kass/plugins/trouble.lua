@@ -1,0 +1,20 @@
+return {
+	"folke/trouble.nvim",
+	dependencies = { "nvim-tree/nvim-web-devicons", "folke/lsp-colors.nvim" },
+	config = function()
+		require("trouble").setup({
+			group = false,
+			multiline = false,
+			height = 6,
+		})
+		vim.keymap.set("n", "<leader>tt", function()
+			require("trouble").toggle()
+		end)
+		vim.keymap.set("n", "<leader>tn", function()
+			require("trouble").next({ skip_group = true, jump = true })
+		end)
+		vim.keymap.set("n", "<leader>tp", function()
+			require("trouble").previous({ skip_group = true, jump = true })
+		end)
+	end,
+}
