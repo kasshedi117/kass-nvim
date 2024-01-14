@@ -1,3 +1,0 @@
-return {
-	"danielvolchek/tailiscope.nvim",
-}
