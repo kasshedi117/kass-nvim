@@ -1,5 +1,6 @@
 local M = {
 	"nvim-neo-tree/neo-tree.nvim",
+	priority = 100,
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
@@ -53,10 +54,28 @@ function M.config()
 				["H"] = "prev_source",
 				["L"] = "next_source",
 				["i"] = "toggle_hidden",
-				["f"] = "fuzzy_finder",
-				["F"] = "fuzzy_finder_directory",
+				-- ["f"] = "fuzzy_finder",
+				-- ["F"] = "fuzzy_finder_directory",
 				["o"] = "open",
 				["<cr>"] = "open",
+				["f"] = function(state)
+					local current_node = state.tree:get_node() -- this is the current node
+					local path = current_node:get_id() -- this gives you the path
+					local searchIn = "find files in " .. path
+					require("telescope.builtin").find_files({
+						prompt_title = searchIn,
+						cwd = path,
+					})
+				end,
+				["F"] = function(state)
+					local current_node = state.tree:get_node() -- this is the current node
+					local path = current_node:get_id() -- this gives you the path
+					local searchIn = "find world in " .. path
+					require("telescope").extensions.live_grep_args.live_grep_args({
+						prompt_title = searchIn,
+						cwd = path,
+					})
+				end,
 			},
 		},
 		filesystem = {

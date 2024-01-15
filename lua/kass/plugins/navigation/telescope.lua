@@ -12,6 +12,7 @@ local M = {
 
 function M.config()
 	local telescope = require("telescope")
+	local lga_actions = require("telescope-live-grep-args.actions")
 	telescope.setup({
 		defaults = {
 			mappings = {
@@ -67,8 +68,38 @@ function M.config()
 			-- Developer configurations: Not meant for general override
 			buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
 		},
-		pickers = { find_files = { find_command = { "fd", "--type", "f", "--hidden", "--strip-cwd-prefix" } } },
+		pickers = {
+			find_files = {
+				find_command = {
+					"fd",
+					"--type",
+					"f",
+					"--hidden",
+					"--strip-cwd-prefix",
+				},
+				mappings = {
+					n = {
+						["cd"] = function(prompt_bufnr)
+							local selection = require("telescope.actions.state").get_selected_entry()
+							local dir = vim.fn.fnamemodify(selection.path, ":p:h")
+							require("telescope.actions").close(prompt_bufnr)
+							-- Depending on what you want put `cd`, `lcd`, `tcd`
+							vim.cmd(string.format("silent lcd %s", dir))
+						end,
+					},
+				},
+			},
+		},
 		extensions = {
+			live_grep_args = {
+				auto_quoting = true,
+				mappings = {
+					i = {
+						["<C-h>"] = lga_actions.quote_prompt({ postfix = " --iglob *html" }),
+						["<C-l>"] = lga_actions.quote_prompt({ postfix = " --iglob *ts" }),
+					},
+				},
+			},
 			fzf = {
 				fuzzy = true,
 				override_generic_sorter = true,
@@ -77,9 +108,10 @@ function M.config()
 			},
 		},
 	})
+	require("telescope").load_extension("fzf")
 
+	vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 	vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
-	vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<CR>")
 	vim.keymap.set("n", "<leader>fG", "<cmd>Telescope git_files<CR>")
 	vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 	vim.keymap.set("n", "<leader>fn", "<cmd>Telescope node_modules list<CR>")
