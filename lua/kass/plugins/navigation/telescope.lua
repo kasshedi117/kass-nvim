@@ -109,7 +109,23 @@ function M.config()
 		},
 	})
 	require("telescope").load_extension("fzf")
+	function vim.getVisualSelection()
+		vim.cmd('noau normal! "vy"')
+		local text = vim.fn.getreg("v")
+		vim.fn.setreg("v", {})
 
+		text = string.gsub(text, "\n", "")
+		if #text > 0 then
+			return text
+		else
+			return ""
+		end
+	end
+
+	vim.keymap.set("v", "<leader>fg", function()
+		local text = vim.getVisualSelection()
+		require("telescope").extensions.live_grep_args.live_grep_args({ default_text = text })
+	end, { noremap = true, silent = true })
 	vim.keymap.set("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
 	vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<CR>")
 	vim.keymap.set("n", "<leader>fG", "<cmd>Telescope git_files<CR>")
