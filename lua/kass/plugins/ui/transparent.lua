@@ -1,6 +1,7 @@
 -- make background transparent
 local M = {
 	"xiyaowong/transparent.nvim",
+	commit = "fd35a46f4b7c1b244249266bdcb2da3814f01724",
 	lazy = false,
 	priority = 1000,
 	name = "transparent",

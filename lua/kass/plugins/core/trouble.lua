@@ -1,5 +1,6 @@
 local M = {
 	"folke/trouble.nvim",
+	version = "v2.10.0",
 	dependencies = { "nvim-tree/nvim-web-devicons", "folke/lsp-colors.nvim" },
 }
 

@@ -2,6 +2,7 @@ local M = {
 	"nvim-neo-tree/neo-tree.nvim",
 	priority = 100,
 	branch = "v3.x",
+	tag = "3.14",
 	dependencies = {
 		"nvim-lua/plenary.nvim",
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
@@ -84,14 +85,17 @@ function M.config()
 				leave_dirs_open = false, -- `false` closes auto expanded dirs, such as with `:Neotree reveal`
 			},
 			window = {
+				position = "left",
 				mappings = {},
 			},
 			buffers = {
+				position = "left",
 				window = {
 					mappings = {},
 				},
 			},
 			git_status = {
+				position = "left",
 				window = {
 					mappings = {},
 				},

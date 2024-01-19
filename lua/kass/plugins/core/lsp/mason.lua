@@ -1,5 +1,6 @@
 local M = {
 	"williamboman/mason.nvim",
+	version = "v1.9.0",
 	dependencies = {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",

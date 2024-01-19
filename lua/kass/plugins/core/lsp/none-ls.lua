@@ -1,5 +1,6 @@
 local M = {
 	"nvimtools/none-ls.nvim", -- configure formatters & linters
+	commit = "e64f03f3f77bd6854c3b3c5cfffcc806a0c0f66a",
 	lazy = true,
 	-- event = { "BufReadPre", "BufNewFile" }, -- to enable uncomment this
 	dependencies = {

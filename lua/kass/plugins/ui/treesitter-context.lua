@@ -1,5 +1,6 @@
 local M = {
 	"nvim-treesitter/nvim-treesitter-context",
+	commit = "85cf977181fb8e816e47ac05df7f756e9cb72caf",
 	name = "nvim-treesitter-context",
 }
 

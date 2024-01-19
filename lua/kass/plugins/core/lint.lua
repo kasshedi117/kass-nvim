@@ -1,5 +1,6 @@
 local M = {
 	"mfussenegger/nvim-lint",
+	commit = "b32127ba52f3a1f7dc86773c2ca3f0029afa12c1",
 	lazy = true,
 	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
 }

@@ -1,5 +1,6 @@
 local M = {
 	"stevearc/conform.nvim",
+	version = "v5.2.0",
 	lazy = true,
 	event = { "BufReadPre", "BufNewFile" }, -- to disable, comment this out
 }

@@ -1,5 +1,6 @@
 local M = {
 	"nvim-telescope/telescope.nvim",
+	tag = "0.1.5",
 	lazy = false,
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- Power telescope with FZF
@@ -132,8 +133,8 @@ function M.config()
 	vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<CR>")
 	vim.keymap.set("n", "<leader>fn", "<cmd>Telescope node_modules list<CR>")
 	vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<CR>")
-	vim.keymap.set("n", "<leader>fz", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
-	vim.keymap.set("n", "<leader>fa", "lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
+	vim.keymap.set("n", "<leader>fw", ":lua require('telescope').extensions.git_worktree.git_worktrees()<CR>")
+	vim.keymap.set("n", "<leader>fa", ":lua require('telescope').extensions.git_worktree.create_git_worktree()<CR>")
 end
 
 return M

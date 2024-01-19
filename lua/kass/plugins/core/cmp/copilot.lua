@@ -1,5 +1,6 @@
 local M = {
 	"zbirenbaum/copilot.lua",
+	commit = "b03617a6dc4bc88b65ab5deac1631da9a9c2dcaf",
 	dependencies = {
 		"zbirenbaum/copilot-cmp",
 	},

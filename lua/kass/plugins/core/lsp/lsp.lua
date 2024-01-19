@@ -1,5 +1,6 @@
 local M = {
 	"neovim/nvim-lspconfig",
+	commit = "042aa6b27b8b8d4f4e1bd42de2037c83d676a8a0",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"hrsh7th/cmp-nvim-lsp",
@@ -19,7 +20,7 @@ function M.config()
 
 		if client.name == "tailwindcss" then
 			require("telescope").load_extension("tailiscope")
-			vim.keymap.set("n", "<leader>fw", "<cmd>Telescope tailiscope all<cr>")
+			vim.keymap.set("n", "<leader>fz", "<cmd>Telescope tailiscope all<cr>")
 		end
 
 		opts.desc = "Show LSP references"

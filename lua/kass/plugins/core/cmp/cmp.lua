@@ -1,5 +1,6 @@
 local M = {
 	"hrsh7th/nvim-cmp",
+	commit = "538e37ba87284942c1d76ed38dd497e54e65b891",
 	event = "InsertEnter",
 	dependencies = {
 		"hrsh7th/cmp-buffer", -- source for text in buffer

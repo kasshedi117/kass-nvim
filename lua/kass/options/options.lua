@@ -1,57 +1,55 @@
-local opt = vim.opt -- for conciseness
-
 vim.opt.guicursor = ""
 
 vim.opt.relativenumber = true -- show relative line numbers
-opt.number = true -- shows absolute line number on cursor line (when relative number is on)
+vim.opt.number = true -- shows absolute line number on cursor line (when relative number is on)
 
 -- tabs & indentation
-opt.tabstop = 4 -- 4 spaces for tabs (prettier default)
-opt.shiftwidth = 4 -- 4 spaces for indent width
-opt.softtabstop = 4
-opt.expandtab = true -- expand tab to spaces
-opt.autoindent = true -- copy indent from current line when starting new one
-
+vim.opt.tabstop = 4 -- 4 spaces for tabs (prettier default)
+vim.opt.shiftwidth = 4 -- 4 spaces for indent width
+vim.opt.expandtab = true -- expand tab to spaces
+vim.opt.autoindent = true -- copy indent from current line when starting new one
+vim.opt.softtabstop = 4
 vim.opt.smartindent = true
 
--- line wrapping
-opt.wrap = false -- disable line wrapping
+vim.opt.showmode = false -- don't show mode
 
-opt.swapfile = false
-opt.backup = false
-opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-opt.undofile = true
+vim.opt.wrap = false -- disable line wrapping
 
-opt.hlsearch = false
-opt.incsearch = true
+vim.opt.swapfile = false -- turn off swapfile
+vim.opt.backup = false
+vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+vim.opt.undofile = true
+
+vim.opt.hlsearch = false
+vim.opt.incsearch = true
 
 -- search settings
-opt.ignorecase = true -- ignore case when searching
-opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
+vim.opt.ignorecase = true -- ignore case when searching
+vim.opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
 -- appearance
--- opt.termguicolors = true
--- opt.background = "dark" -- colorschemes that can be light or dark will be made dark
+vim.opt.termguicolors = true
+vim.opt.background = "dark" -- colorschemes that can be light or dark will be made dark
 
-opt.scrolloff = 8
-opt.signcolumn = "yes" -- show sign column so that text doesn't shift
-opt.isfname:append("@-@")
+vim.opt.scrolloff = 8
+vim.opt.signcolumn = "yes" -- show sign column so that text doesn't shift
+vim.opt.isfname:append("@-@")
 
 -- cursor line
-opt.cursorline = true -- highlight the current cursor line
+vim.opt.cursorline = true -- highlight the current cursor line
 
 -- backspace
-opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
+vim.opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or insert mode start position
 
 -- clipboard
-opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+-- vim.opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 
 -- split windows
-opt.splitright = true -- split vertical window to the right
-opt.splitbelow = true -- split horizontal window to the bottom
+vim.opt.splitright = true -- split vertical window to the right
+vim.opt.splitbelow = true -- split horizontal window to the bottom
 
--- turn off swapfile
-opt.swapfile = false
+vim.opt.updatetime = 50
+vim.opt.colorcolumn = "80"
 
 vim.opt.iskeyword:append("_")
 vim.opt.iskeyword:append("-")

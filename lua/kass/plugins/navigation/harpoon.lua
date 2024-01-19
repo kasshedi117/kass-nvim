@@ -1,6 +1,7 @@
 local M = {
 	"ThePrimeagen/harpoon",
 	branch = "harpoon2",
+	commit = "2cd4e03372f7ee5692c8caa220f479ea07970f17",
 	dependencies = { "nvim-lua/plenary.nvim" },
 }
 
@@ -10,7 +11,7 @@ function M.config()
 	vim.keymap.set("n", "<leader>a", function()
 		harpoon:list():append()
 	end)
-	vim.keymap.set("n", "<leader>z", function()
+	vim.keymap.set("n", "<leader>w", function()
 		harpoon.ui:toggle_quick_menu(harpoon:list())
 	end)
 

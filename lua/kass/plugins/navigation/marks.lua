@@ -1,5 +1,6 @@
 local M = {
 	"chentoast/marks.nvim",
+	commit = "74e8d01b2a2131b6e46354cffc553aa7f81bcf5b",
 }
 
 function M.config()
