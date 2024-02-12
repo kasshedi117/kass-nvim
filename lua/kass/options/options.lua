@@ -20,7 +20,7 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
-vim.opt.hlsearch = false
+vim.opt.hlsearch = true
 vim.opt.incsearch = true
 
 -- search settings
@@ -49,7 +49,6 @@ vim.opt.splitright = true -- split vertical window to the right
 vim.opt.splitbelow = true -- split horizontal window to the bottom
 
 vim.opt.updatetime = 50
-vim.opt.colorcolumn = "80"
 
 vim.opt.iskeyword:append("_")
 vim.opt.iskeyword:append("-")
